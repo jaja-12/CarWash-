@@ -16,20 +16,63 @@ The final system must be logically correct and require NO debugging due to poor 
 ==================================================
 SYSTEM SCENARIO
 ==================================================
-[REPLACE THIS SECTION]
+StockHub Ltd is a company located in Kigali City, Rwanda. It provides wholesale and retail
+product distribution services. The company is struggling with inefficiencies due to its manual,
+paper based system for managing stock movement and inventory records. The store manager
+records product details characterized by product code, product name, category, quantity in stock,
+unit price, supplier name and date received. The company also records warehouse information
+characterized by warehouse code, warehouse name and warehouse location. Based on the
+warehouse data, the store manager manually tracks stock in and stock out activities characterized
+by transaction date, quantity moved and transaction type. This process is slow, prone to errors
+and makes it difficult to monitor stock availability and generate inventory reports efficiently. To
+address these challenges, the StockHub Ltd needs a web based application that handles the stock
+management process. The system should allow the store manager to record stock details digitally
+and automatically generate needed reports.  ,
 
-<Describe the company, location in Rwanda, and the services offered.
-Explain the current manual/paper-based process.
-Explain what data is recorded manually.
-Explain the problems caused by the manual system.
-Explain the need for a web-based system.>
+
+
+SupplyNet Ltd is a company located in Musanze District, northern province of Rwanda. It
+provides supply chain and logistics services. The company is experiencing inefficiencies due to
+its manual system for tracking suppliers, shipments and deliveries. The procurement office
+records supplier details characterized by supplier code, supplier name, telephone, address and
+email. Shipment details are characterized by shipment number, shipment date, shipment status
+and destination. The company also records product delivery information characterized by
+delivery code, delivery date, quantity delivered and delivery status. This process is slow, prone to
+errors and makes it difficult to monitor shipment progress and generate supply chain reports
+efficiently. To address these challenges, the SupplyNet Ltd needs a web based application that
+handles the supply chain management process. The system should allow procurement officers to
+record supplier and shipment details digitally and automatically generate needed reports.
+
+
+
+
+
+SalesPro Ltd is a company located in Huye District, southern province of Rwanda. It provides
+electronic equipment sales services. The company is facing challenges due to its manual system
+for recording daily sales transactions. The sales department records customer details
+characterized by customer number, first name, last name, telephone and address. Products sold
+are characterized by product code, product name, quantity sold and unit price. The company also
+records sales information characterized by invoice number, sales date, payment method and total
+amount paid. This process is time consuming, prone to errors and makes it difficult to generate
+daily, weekly and monthly sales reports efficiently. To address these challenges, the SalesPro Ltd
+needs a web based application that handles the sales recording process. The system should allow
+sales officers to record sales details digitally and automatically generate needed reports.
+
+
+
+
+
+
 
 ==================================================
 SYSTEM NAME
 ==================================================
-[REPLACE THIS SECTION]
+Stock Management System (SMS),
+Supply Chain Management System (SCMS),
+Sales Record Management System (SRMS)
 
-<System Full Name (with abbreviation)>
+                    
+
 
 ==================================================
 SYSTEM OBJECTIVE
@@ -43,15 +86,28 @@ SYSTEM OBJECTIVE
 ==================================================
 BASE ENTITIES & ATTRIBUTES (CAN BE EXTENDED)
 ==================================================
-[REPLACE THIS SECTION]
 
 The following entities and attributes are provided.
 You MAY add missing identifiers, reference fields, and supporting entities if required by logic.
 
-1. EntityOne(...)
-2. EntityTwo(...)
-3. EntityThree(...)
-4. EntityFour(...)
+1. Product (productCode, productName, category, quantityInStock, unitPrice,
+supplierName, dateReceived)
+2. Warehouse (warehouseCode, warehouseName, warehouseLocation)
+3. StockTransaction (transactionDate, quantityMoved, transactionType),
+
+
+1. Supplier (supplierCode, supplierName, telephone, address, email)
+2. Shipment (shipmentNumber, shipmentDate, shipmentStatus, destination)
+3. Delivery (deliveryCode, deliveryDate, quantityDelivered, deliveryStatus),
+
+
+
+1. Customer (customerNumber, firstName, lastName, telephone, address)
+2. Product (productCode, productName, quantitySold, unitPrice)
+3. Sale (invoiceNumber, salesDate, paymentMethod, totalAmountPaid)
+
+
+
 
 IMPORTANT:
 - Authentication is required but no User entity is provided.
@@ -79,7 +135,10 @@ Produce:
 ==================================================
 DATABASE SETUP
 ==================================================
-Database Name: [REPLACE_DB_NAME]
+Database Name: SMS,
+               SCMS,
+               SRMS
+               
 
 - Use MongoDB with Mongoose ODM
 - Define schemas with:
